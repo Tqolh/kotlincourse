@@ -1,32 +1,70 @@
-// Classe mère
-open class Voiture(
-    val marque: String,
-    val modele: String,
-    val matricule: String
-) {
-    open fun afficherInfo() {
-        println("Marque : $marque")
-        println("Modèle : $modele")
-        println("Matricule : $matricule")
+import kotlin.Int
+import kotlin.collections.MutableList
+
+class Liste() {
+    val list : MutableList<Int> = mutableListOf()
+    fun remremplirList(){
+        for (i in 0..10){
+            list.add(i)
+        }
     }
-}
-
-// Classe fille
-class Camion(
-    marque: String,
-    modele: String,
-    matricule: String,
-    val couleur: String
-) : Voiture(marque, modele, matricule) {
-
-    override fun afficherInfo() {
-        super.afficherInfo()
-        println("Couleur : $couleur")
+    fun getMax() : Int {
+       var max = list[0]
+        for (elc in list){
+            if(max < elc){
+                max = elc            }
+        }
+        return  max
     }
-}
+    fun getNbrimPair():List<Int>{
+        var nvlist : MutableList<Int> = mutableListOf()
+        for(impair in list){
+            if(impair % 2 != 0){
+                nvlist.add(impair)
+            }
+        }
+        return nvlist
+    }
+    fun getNbrPair():List<Int>{
+        var nvlist : MutableList<Int> = mutableListOf()
+        for(pair in list){
+            if(pair % 2 == 0){
+                nvlist.add(pair)
+            }
+        }
+        return nvlist
+    }
 
-// Exemple d'utilisation
+    fun getNbrPremier():MutableList<Int>{
+        var nouvList : MutableList<Int> = mutableListOf()
+        for (elt in list){
+            if(estPremier(elt) ){
+                nouvList.add(elt)
+            }
+        }
+        return nouvList
+    }
+
+    private fun estPremier(elt: Int): Boolean {
+
+        for (i in 2..elt-1){
+            if(elt % i == 0){
+                return false
+            }
+        }
+
+        return true
+    }
+
+}
 fun main() {
-    val camion1 = Camion("Mercedes", "Actros", "123-TN-456", "Blanc")
-    camion1.afficherInfo()
+    val list1 = Liste()
+    list1.remremplirList()
+    println("list c'est  : ${list1.list}")
+    println("le max c'est: ${list1.getMax()}")
+    println("les nbpair c'est : ${list1.getNbrPair()}")
+    println("les nbimpair c'est : ${list1.getNbrimPair()}")
+    println("les nombre premier :${list1.getNbrPremier()}")
 }
+
+
