@@ -58,7 +58,9 @@ class Liste() {
 
 }
 fun main() {
+    val list2 = Liste()
     val list1 = Liste()
+    list2.remremplirList()
     list1.remremplirList()
     println("list c'est  : ${list1.list}")
     println("le max c'est: ${list1.getMax()}")
