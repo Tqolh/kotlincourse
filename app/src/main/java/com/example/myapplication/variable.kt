@@ -37,7 +37,7 @@ fun main(){
     var student : Boolean = true
 
     println("\n My name is : $name , I'm : $age , I get last years  : $annoyance , my favorite character is : $letter , I'm Student : $student")
-// Input in Kotlin
+// Input  and condition in Kotlin
 //exercice : 1
     println("entre un nombre :")
     var nb  = readLine()!!.toInt()
@@ -63,7 +63,7 @@ fun main(){
     var n : Int = readLine()!!.toInt()
     print ("donne le deuxeme nombre :")
     var n1 : Int = readLine()!!.toInt()
-    var max : Int = if(n>n1) n else n1
+    var max : Int = if(n>n1) n else n1 // expression
     println("le max c'est : $max")
 
 // exercie : 4
