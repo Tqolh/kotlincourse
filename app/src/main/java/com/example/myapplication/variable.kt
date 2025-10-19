@@ -171,7 +171,7 @@ println("exercice 1  function : ")
     println("la somme c'est : "+sommeDeuxNombre(5 , 10))
     println("le max c'est :"+maxOfThree(5,7,2))
     println("le nombre c'est "+isPositive(0))
-// null safety
+// when
     println("entre un nommbre entre 1 et 7 : ")
     var jour : Int =readLine()!!.toInt()
     when(jour){
